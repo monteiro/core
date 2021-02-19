@@ -521,6 +521,7 @@ final class DocumentationNormalizer implements NormalizerInterface, CacheableSup
             (string) $resourceMetadata->getTypedOperationAttribute($operationType, $operationName, 'status', '201') => $successResponse,
             '400' => ['description' => 'Invalid input'],
             '404' => ['description' => 'Resource not found'],
+            '422' => ['description' => 'Unprocessable Entity'],
         ];
 
         return $this->addRequestBody($v3, $pathOperation, $definitions, $resourceClass, $resourceShortName, $operationType, $operationName, $requestMimeTypes);
@@ -544,6 +545,7 @@ final class DocumentationNormalizer implements NormalizerInterface, CacheableSup
             (string) $resourceMetadata->getTypedOperationAttribute($operationType, $operationName, 'status', '200') => $successResponse,
             '400' => ['description' => 'Invalid input'],
             '404' => ['description' => 'Resource not found'],
+            '422' => ['description' => 'Unprocessable Entity'],
         ];
 
         return $this->addRequestBody($v3, $pathOperation, $definitions, $resourceClass, $resourceShortName, $operationType, $operationName, $requestMimeTypes, true);
